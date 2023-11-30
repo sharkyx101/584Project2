@@ -7,7 +7,7 @@ function App() {
   const [responses, setResponses] = useState([]);
 
   useEffect(() => {
-
+    // Fetch responses from the Flask API on component mount
     fetchData();
   }, []);
 
@@ -20,12 +20,14 @@ function App() {
       const formData = new FormData();
       formData.append('my_audio_file', file);
 
-
+      // Assuming Flask server is running on localhost:8086
       const response = await axios.post('http://localhost:8086/api/file_tempo', formData);
 
-      //update responses state with the new response
+      // Update responses state with the new response
       setResponses([...responses, response.data]);
 
+      // Fetch updated responses after upload (optional, depending on your requirements)
+      // fetchData();
     } catch (error) {
       console.error('Error uploading file:', error);
     }
@@ -40,7 +42,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      //responses from the Flask API
+      // Fetch responses from the Flask API
       const response = await axios.get('http://localhost:8086/api/file_tempo');
       setResponses(response.data);
     } catch (error) {
