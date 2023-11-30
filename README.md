@@ -1,2 +1,2 @@
 # 584Project2
-Michael Sanati's Project 2 for 584, added is a readme.txt file for info on framework and screenshots of the post request response endpoint in part 1, the excel table via sheetjs that shows the responses from those test files, and extra screenshots on other project related inquiries. 
+Michael Sanati's Project 2 for 584: This project utilizes a Flask backend to create a REST API endpoint for processing audio file uploads, with responses stored locally in a React frontend state. The Flask server is complemented by the CORS middleware, and the frontend employs React for dynamic UI updates, axios for API communication, and SheetJS for exporting data to Microsoft Excel format.
